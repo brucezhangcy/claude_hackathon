@@ -1,19 +1,42 @@
 {
   "tracks": [
     {
-      "id": "ai",
-      "name": "Artificial Intelligence",
-      "requiredCourses": ["CSCI360", "CSCI467", "CSCI561"]
+      "id": "core-foundations",
+      "name": "Core CS + EE Foundations",
+      "requiredCourses": [
+        "CSCI102L",
+        "CSCI103L",
+        "CSCI104L",
+        "CSCI170",
+        "CSCI270",
+        "EE109L",
+        "EE250L",
+        "EE354L",
+        "EE457"
+      ]
     },
     {
-      "id": "systems",
-      "name": "Computer Systems",
-      "requiredCourses": ["CSCI350", "CSCI353", "CSCI356"]
+      "id": "computing-systems",
+      "name": "Computing Systems Track (Software/Systems)",
+      "requiredCourses": [
+        "CSCI201L",
+        "CSCI350",
+        "CSCI353",
+        "EE451",
+        "EE454L",
+        "EE477L",
+        "CSCI401"
+      ]
     },
     {
-      "id": "software-engineering",
-      "name": "Software Engineering",
-      "requiredCourses": ["CSCI310", "CSCI401", "CSCI571"]
+      "id": "embedded-systems",
+      "name": "Embedded Systems Track (Hardware-leaning)",
+      "requiredCourses": [
+        "CSCI430",
+        "EE202L",
+        "EE301",
+        "EE459Lx"
+      ]
     }
   ]
 }

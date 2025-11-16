@@ -1,6 +1,22 @@
 {
   "courses": [
     {
+      "id": "CSCI102L",
+      "name": "Introduction to Programming",
+      "prerequisites": []
+    },
+    {
+      "id": "CSCI103L",
+      "name": "Object-Oriented Programming",
+      "prerequisites": ["CSCI102L"]
+    },
+    {
+      "id": "CSCI104L",
+      "name": "Data Structures and Object Oriented Design",
+      "prerequisites": ["CSCI103L"]
+    },
+
+    {
       "id": "CSCI103",
       "name": "Introduction to Programming",
       "prerequisites": []
@@ -21,34 +37,39 @@
       "prerequisites": ["CSCI104"]
     },
     {
+      "id": "CSCI201L",
+      "name": "Principles of Software Development",
+      "prerequisites": ["CSCI104L"]
+    },
+    {
       "id": "CSCI270",
       "name": "Introduction to Algorithms and Theory of Computing",
-      "prerequisites": ["CSCI104", "CSCI170"]
+      "prerequisites": ["CSCI104", "CSCI104L", "CSCI170"]
     },
     {
       "id": "CSCI310",
       "name": "Software Engineering",
-      "prerequisites": ["CSCI201"]
+      "prerequisites": ["CSCI201", "CSCI201L"]
     },
     {
       "id": "CSCI350",
       "name": "Introduction to Operating Systems",
-      "prerequisites": ["CSCI201"]
+      "prerequisites": ["CSCI201", "CSCI201L"]
     },
     {
       "id": "CSCI353",
       "name": "Introduction to Internetworking",
-      "prerequisites": ["CSCI201"]
+      "prerequisites": ["CSCI201", "CSCI201L"]
     },
     {
       "id": "CSCI356",
       "name": "Introduction to Computer Systems",
-      "prerequisites": ["CSCI104"]
+      "prerequisites": ["CSCI104", "CSCI104L"]
     },
     {
       "id": "CSCI360",
       "name": "Introduction to Artificial Intelligence",
-      "prerequisites": ["CSCI104", "CSCI170"]
+      "prerequisites": ["CSCI104", "CSCI104L", "CSCI170"]
     },
     {
       "id": "CSCI401",
@@ -58,12 +79,12 @@
     {
       "id": "CSCI420",
       "name": "Computer Graphics",
-      "prerequisites": ["CSCI104"]
+      "prerequisites": ["CSCI104", "CSCI104L"]
     },
     {
       "id": "CSCI455",
       "name": "Introduction to Programming Systems Design",
-      "prerequisites": ["CSCI104"]
+      "prerequisites": ["CSCI104", "CSCI104L"]
     },
     {
       "id": "CSCI467",
@@ -83,12 +104,64 @@
     {
       "id": "CSCI571",
       "name": "Web Technologies",
-      "prerequisites": ["CSCI201"]
+      "prerequisites": ["CSCI201", "CSCI201L"]
     },
     {
       "id": "CSCI585",
       "name": "Database Systems",
-      "prerequisites": ["CSCI201"]
+      "prerequisites": ["CSCI201", "CSCI201L"]
+    },
+
+    {
+      "id": "CSCI430",
+      "name": "Computer & Network Security",
+      "prerequisites": ["CSCI356"]
+    },
+
+    {
+      "id": "EE109L",
+      "name": "Introduction to Embedded Systems",
+      "prerequisites": []
+    },
+    {
+      "id": "EE250L",
+      "name": "Distributed Systems for IoT",
+      "prerequisites": ["EE109L"]
+    },
+    {
+      "id": "EE354L",
+      "name": "Digital Circuits",
+      "prerequisites": ["EE109L"]
+    },
+    {
+      "id": "EE457",
+      "name": "Computer Systems Organization",
+      "prerequisites": ["CSCI356"]
+    },
+    {
+      "id": "EE454L",
+      "name": "System-on-Chip",
+      "prerequisites": ["EE354L"]
+    },
+    {
+      "id": "EE477L",
+      "name": "VLSI",
+      "prerequisites": ["EE354L"]
+    },
+    {
+      "id": "EE202L",
+      "name": "Linear Circuits",
+      "prerequisites": []
+    },
+    {
+      "id": "EE301",
+      "name": "Linear Systems",
+      "prerequisites": ["EE202L"]
+    },
+    {
+      "id": "EE459Lx",
+      "name": "Embedded Systems Lab",
+      "prerequisites": ["EE301"]
     }
   ]
 }

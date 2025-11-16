@@ -104,9 +104,32 @@
   border: 2px solid;
 }
 
+/* Per-track legend colors for correspondence */
+.legend-color.track-core {
+  background-color: #2563EB; /* blue */
+  border-color: #1D4ED8;
+}
+
+.legend-color.track-computing {
+  background-color: #10B981; /* green */
+  border-color: #059669;
+}
+
+.legend-color.track-embedded {
+  background-color: #F59E0B; /* amber */
+  border-color: #D97706;
+}
+
+.legend-color.available-next {
+  background-color: #FFFFFF;
+  border-color: #2563EB; /* blue */
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3) inset;
+}
+
+/* Keep existing status colors for graph/status legend if needed elsewhere */
 .legend-color.normal {
-  background-color: #6B7280;
-  border-color: #4B5563;
+  background-color: #10B981; /* green for Available */
+  border-color: #059669;
 }
 
 .legend-color.excluded {

@@ -1,16 +1,16 @@
 import { tracks, getCourseById } from '../data';
 import type { Track } from '../data';
-import { isCourseAvailable } from '../utils/graphAlgorithms';
 
 interface TrackStatusProps {
   excludedCourses: Set<string>;
-  affectedCourses: Set<string>;
+  affectedCourses: Set<string>; // kept for future use, not required for current display
+  completedCourses: Set<string>;
 }
 
 interface CourseStatus {
   id: string;
   name: string;
-  available: boolean;
+  state: 'taken' | 'excluded' | 'not_taken';
 }
 
 interface TrackInfo {
@@ -19,18 +19,24 @@ interface TrackInfo {
   courseStatuses: CourseStatus[];
 }
 
-const TrackStatus = ({ excludedCourses, affectedCourses }: TrackStatusProps) => {
+const TrackStatus = ({ excludedCourses, completedCourses }: TrackStatusProps) => {
   const trackInfos: TrackInfo[] = tracks.map(track => {
     const courseStatuses = track.requiredCourses.map(courseId => {
       const course = getCourseById(courseId);
+      let state: CourseStatus['state'] = 'not_taken';
+      if (completedCourses.has(courseId)) {
+        state = 'taken';
+      } else if (excludedCourses.has(courseId)) {
+        state = 'excluded';
+      }
       return {
         id: courseId,
         name: course?.name || courseId,
-        available: isCourseAvailable(courseId, excludedCourses, affectedCourses)
+        state
       };
     });
 
-    const isComplete = courseStatuses.every(cs => cs.available);
+    const isComplete = courseStatuses.every(cs => cs.state === 'taken');
 
     return {
       track,
@@ -38,6 +44,18 @@ const TrackStatus = ({ excludedCourses, affectedCourses }: TrackStatusProps) => 
       courseStatuses
     };
   });
+
+  const getColorForState = (state: CourseStatus['state']) => {
+    switch (state) {
+      case 'taken':
+        return '#10B981';
+      case 'excluded':
+        return '#EF4444';
+      case 'not_taken':
+      default:
+        return '#374151';
+    }
+  };
 
   return (
     <div style={{
@@ -110,16 +128,17 @@ const TrackStatus = ({ excludedCourses, affectedCourses }: TrackStatusProps) => 
                   gap: '0.5rem',
                   padding: '0.25rem 0',
                   fontSize: '0.875rem',
-                  color: cs.available ? '#374151' : '#EF4444',
-                  textDecoration: cs.available ? 'none' : 'line-through'
+                  color: getColorForState(cs.state),
+                  textDecoration: cs.state === 'excluded' ? 'line-through' : 'none'
                 }}
               >
                 <span style={{
-                  width: '1rem',
-                  textAlign: 'center'
-                }}>
-                  {cs.available ? '○' : '✗'}
-                </span>
+                  width: '0.75rem',
+                  height: '0.75rem',
+                  display: 'inline-block',
+                  backgroundColor: getColorForState(cs.state),
+                  borderRadius: '0'
+                }}></span>
                 <span style={{ fontWeight: '500' }}>{cs.id}</span>
                 <span style={{
                   color: '#6B7280',
@@ -142,7 +161,7 @@ const TrackStatus = ({ excludedCourses, affectedCourses }: TrackStatusProps) => 
               color: '#EF4444',
               fontStyle: 'italic'
             }}>
-              Missing: {courseStatuses.filter(cs => !cs.available).map(cs => cs.id).join(', ')}
+              Missing: {courseStatuses.filter(cs => cs.state !== 'taken').map(cs => cs.id).join(', ')}
             </div>
           )}
         </div>
