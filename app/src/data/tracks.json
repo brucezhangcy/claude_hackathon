@@ -1,0 +1,19 @@
+{
+  "tracks": [
+    {
+      "id": "ai",
+      "name": "Artificial Intelligence",
+      "requiredCourses": ["CSCI360", "CSCI467", "CSCI561"]
+    },
+    {
+      "id": "systems",
+      "name": "Computer Systems",
+      "requiredCourses": ["CSCI350", "CSCI353", "CSCI356"]
+    },
+    {
+      "id": "software-engineering",
+      "name": "Software Engineering",
+      "requiredCourses": ["CSCI310", "CSCI401", "CSCI571"]
+    }
+  ]
+}

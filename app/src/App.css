@@ -1,0 +1,134 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #F3F4F6;
+}
+
+.app-header {
+  background-color: #990000;
+  color: #FFCC00;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.header-subtitle {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.875rem;
+  color: rgba(255, 204, 0, 0.8);
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.reset-button {
+  background-color: #FFCC00;
+  color: #990000;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+}
+
+.reset-button:hover {
+  background-color: #FFD633;
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+  min-height: 0;
+}
+
+.graph-container {
+  flex: 7;
+  min-height: 500px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.sidebar {
+  flex: 3;
+  min-width: 280px;
+  max-width: 400px;
+  background-color: #F9FAFB;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.app-footer {
+  background-color: #FFFFFF;
+  padding: 0.75rem 2rem;
+  border-top: 1px solid #E5E7EB;
+}
+
+.legend {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #4B5563;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 2px solid;
+}
+
+.legend-color.normal {
+  background-color: #6B7280;
+  border-color: #4B5563;
+}
+
+.legend-color.excluded {
+  background-color: #374151;
+  border-color: #1F2937;
+}
+
+.legend-color.affected {
+  background-color: #EF4444;
+  border-color: #DC2626;
+}
+
+@media (max-width: 768px) {
+  .app-main {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    max-width: none;
+  }
+
+  .graph-container {
+    min-height: 400px;
+  }
+}

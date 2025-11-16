@@ -1,0 +1,94 @@
+{
+  "courses": [
+    {
+      "id": "CSCI103",
+      "name": "Introduction to Programming",
+      "prerequisites": []
+    },
+    {
+      "id": "CSCI104",
+      "name": "Data Structures and Object Oriented Design",
+      "prerequisites": ["CSCI103"]
+    },
+    {
+      "id": "CSCI170",
+      "name": "Discrete Methods in Computer Science",
+      "prerequisites": []
+    },
+    {
+      "id": "CSCI201",
+      "name": "Principles of Software Development",
+      "prerequisites": ["CSCI104"]
+    },
+    {
+      "id": "CSCI270",
+      "name": "Introduction to Algorithms and Theory of Computing",
+      "prerequisites": ["CSCI104", "CSCI170"]
+    },
+    {
+      "id": "CSCI310",
+      "name": "Software Engineering",
+      "prerequisites": ["CSCI201"]
+    },
+    {
+      "id": "CSCI350",
+      "name": "Introduction to Operating Systems",
+      "prerequisites": ["CSCI201"]
+    },
+    {
+      "id": "CSCI353",
+      "name": "Introduction to Internetworking",
+      "prerequisites": ["CSCI201"]
+    },
+    {
+      "id": "CSCI356",
+      "name": "Introduction to Computer Systems",
+      "prerequisites": ["CSCI104"]
+    },
+    {
+      "id": "CSCI360",
+      "name": "Introduction to Artificial Intelligence",
+      "prerequisites": ["CSCI104", "CSCI170"]
+    },
+    {
+      "id": "CSCI401",
+      "name": "Capstone: Design and Construction of Large Software Systems",
+      "prerequisites": ["CSCI310"]
+    },
+    {
+      "id": "CSCI420",
+      "name": "Computer Graphics",
+      "prerequisites": ["CSCI104"]
+    },
+    {
+      "id": "CSCI455",
+      "name": "Introduction to Programming Systems Design",
+      "prerequisites": ["CSCI104"]
+    },
+    {
+      "id": "CSCI467",
+      "name": "Introduction to Machine Learning",
+      "prerequisites": ["CSCI270"]
+    },
+    {
+      "id": "CSCI561",
+      "name": "Foundations of Artificial Intelligence",
+      "prerequisites": ["CSCI360"]
+    },
+    {
+      "id": "CSCI566",
+      "name": "Deep Learning and its Applications",
+      "prerequisites": ["CSCI467"]
+    },
+    {
+      "id": "CSCI571",
+      "name": "Web Technologies",
+      "prerequisites": ["CSCI201"]
+    },
+    {
+      "id": "CSCI585",
+      "name": "Database Systems",
+      "prerequisites": ["CSCI201"]
+    }
+  ]
+}
