@@ -139,7 +139,9 @@ const CourseGraph = ({ excludedCourses, affectedCourses, onCourseClick }: Course
       ref={containerRef}
       style={{
         width: '100%',
-        height: '100%',
+        // Give the network a definite height so vis-network
+        // has non-zero space to render into.
+        height: '600px',
         backgroundColor: '#FFFFFF',
         borderRadius: '8px',
         border: '1px solid #E5E7EB'

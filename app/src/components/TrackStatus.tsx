@@ -43,9 +43,7 @@ const TrackStatus = ({ excludedCourses, affectedCourses }: TrackStatusProps) => 
     <div style={{
       display: 'flex',
       flexDirection: 'column',
-      gap: '1rem',
-      height: '100%',
-      overflowY: 'auto'
+      gap: '1rem'
     }}>
       <h2 style={{
         fontSize: '1.25rem',
